@@ -1,0 +1,27 @@
+Setup asl-dahdi-linux-2.11.1.0.20170917 for dkms install
+
+build_tools/dkms-helper generate_conf > dkms.conf"
+"Create a dkms.conf based on the currently compiled kernel"
+"modules. This is also done as part of add and is not"
+"normally needed as a separate step."
+hmmm?
+
+unpack source to /usr/src/asl-dahdi-linux-2.11.1.0.20170917
+dkms add -m asl-dahdi-linux -v 2.11.1.0.20170917
+dkms build -m asl-dahdi-linux -v 2.11.1.0.20170917
+dkms mkdsc -m asl-dahdi-linux -v 2.11.1.0.20170917 --source-only
+dkms mkdeb -m asl-dahdi-linux -v 2.11.1.0.20170917 --source-only
+/var/lib/dkms/asl-dahdi-linux/2.11.1.0.20170917/deb contains asl-dahdi-linux-dkms_2.11.1.0.20170917_armhf.deb
+
+You can install the .deb on the target machine
+dpkg-i asl-dahdi-linux-dkms_2.11.1.0.20170917_armhf.deb
+
+asl-dahdi-linux-2.11.1.0.20170917/asl-dahdi-linux-dkms-mkdeb/Makefile has been patched to fix bug when
+building deb.
+See <https://github.com/dell/dkms/commit/6a5b329a96635ddff4be79fafa78bd71f270919e>
+
+asl-dahdi-linux-dkms-mkdeb
+asl-dahdi-linux-dkms-mkdsc -> asl-dahdi-linux-dkms-mkdeb
+
+Steve N4IRS
+

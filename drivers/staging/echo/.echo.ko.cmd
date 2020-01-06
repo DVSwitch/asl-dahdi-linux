@@ -1,0 +1,1 @@
+cmd_/usr/src/dahdi-test/drivers/dahdi/../staging/echo/echo.ko := ld -r  -EL -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /usr/src/dahdi-test/drivers/dahdi/../staging/echo/echo.ko /usr/src/dahdi-test/drivers/dahdi/../staging/echo/echo.o /usr/src/dahdi-test/drivers/dahdi/../staging/echo/echo.mod.o ;  true
