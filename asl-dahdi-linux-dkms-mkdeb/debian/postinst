@@ -46,4 +46,7 @@ esac
 
 #DEBHELPER#
 
+echo "dahdi_dummy" >>/etc/modules
+echo "dahdi" >>/etc/modules
+
 exit 0
