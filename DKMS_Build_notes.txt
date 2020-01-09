@@ -23,5 +23,18 @@ See <https://github.com/dell/dkms/commit/6a5b329a96635ddff4be79fafa78bd71f270919
 asl-dahdi-linux-dkms-mkdeb
 asl-dahdi-linux-dkms-mkdsc -> asl-dahdi-linux-dkms-mkdeb
 
+Issues / bug fixes
+
+binaries and scripts marked -x in .deb
+# See <https://github.com/dell/dkms/commit/6a5b329a96635ddff4be79fafa78bd71f270919e>
+#	chmod 644 -R "$(SRC)/$(NAME)-$(VERSION)"
+	find "$(SRC)/$(NAME)-$(VERSION)" -type f | xargs chmod a+r
+
+DKMS module removed completely
+<https://github.com/dell/dkms/issues/37>
+<https://github.com/dell/dkms/commit/0c19129b5d1f8e03498f6f2455ad9f7e14e9e606>
+
+Are we getting close to a "custom" DKMS? 
+
 Steve N4IRS
 
