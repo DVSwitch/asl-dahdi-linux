@@ -1,0 +1,20 @@
+--- dkms	2016-08-31 17:23:47.000000000 +0000
++++ dkms	2020-01-09 19:43:00.000000000 +0000
+@@ -8,11 +8,15 @@
+    name=`echo "$line" | awk '{print $1}' | sed 's/,$//'`
+    vers=`echo "$line" | awk '{print $2}' | sed 's/,$//'`
+    arch=`echo "$line" | awk '{print $4}' | sed 's/:$//'`
+-   echo "dkms: removing: $name $vers ($inst_kern) ($arch)" >&2
+-   dkms remove -m $name -v $vers -k $inst_kern -a $arch
++   echo "dkms: uninstalling: $name $vers ($inst_kern) ($arch)" >&2
++   # dkms remove -m $name -v $vers -k $inst_kern -a $arch # N4IRS
++   # <https://github.com/dell/dkms/commit/0c19129b5d1f8e03498f6f2455ad9f7e14e9e606>
++   dkms uninstall -m $name -v $vers -k $inst_kern -a $arch
+ done < <(dkms status -k $inst_kern 2>/dev/null | grep ": installed")
+ fi
+ 
++exit 0 # N4IRS
++
+ rmdir --ignore-fail-on-non-empty \
+ 	"/lib/modules/$inst_kern/updates/dkms" \
+ 	"/lib/modules/$inst_kern/updates" 2>/dev/null

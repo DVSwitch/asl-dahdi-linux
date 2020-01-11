@@ -1,0 +1,21 @@
+/etc/kernel/postinst.d/dkms:
+Error! echo
+Your kernel headers for kernel 4.19.66-v7l+ cannot be found at
+/lib/modules/4.19.66-v7l+/build or /lib/modules/4.19.66-v7l+/source.
+run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.19.66-v7l+ /boot/kernel7l.img
+root@raspberrypi:/home/pi# 
+
+run-parts: executing /etc/kernel/postinst.d/apt-auto-removal 4.19.66+ /boot/kernel.img
+run-parts: executing /etc/kernel/postinst.d/dkms 4.19.66+ /boot/kernel.img
+run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.19.66+ /boot/kernel.img
+run-parts: executing /etc/kernel/postinst.d/apt-auto-removal 4.19.66-v7+ /boot/kernel7.img
+run-parts: executing /etc/kernel/postinst.d/dkms 4.19.66-v7+ /boot/kernel7.img
+run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.19.66-v7+ /boot/kernel7.img
+run-parts: executing /etc/kernel/postinst.d/apt-auto-removal 4.19.66-v7l+ /boot/kernel7l.img
+run-parts: executing /etc/kernel/postinst.d/dkms 4.19.66-v7l+ /boot/kernel7l.img
+/etc/kernel/postinst.d/dkms:
+Error! echo
+Your kernel headers for kernel 4.19.66-v7l+ cannot be found at
+/lib/modules/4.19.66-v7l+/build or /lib/modules/4.19.66-v7l+/source.
+run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.19.66-v7l+ /boot/kernel7l.img
+

@@ -1,0 +1,15 @@
+--- dkms.old	2016-12-28 11:57:32.000000000 +0000
++++ dkms	2020-01-10 01:22:21.561894991 +0000
+@@ -1736,7 +1736,11 @@
+             fi
+         fi
+     done
+-    rm -f "$dkms_tree/$module/kernel-$1-$2"
++    # rm -f "$dkms_tree/$module/kernel-$1-$2"
++    # <https://github.com/dell/dkms/commit/0c19129b5d1f8e03498f6f2455ad9f7e14e9e606> N4IRS
++    rm -rf "$dkms_tree/$module/kernel-$1-$2"
++    # Remove modules from dkms built tree
++    rm -rf "$dkms_tree/$module/$module_version/$1"
+     else
+         echo $""
+         echo $"Status: This module version was INACTIVE for this kernel."
