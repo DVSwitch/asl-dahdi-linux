@@ -15,7 +15,7 @@ while read line; do
 done < <(dkms status -k $inst_kern 2>/dev/null | grep ": installed")
 fi
 
-exit 0 # N4IRS
+# exit 0 # N4IRS
 
 rmdir --ignore-fail-on-non-empty \
 	"/lib/modules/$inst_kern/updates/dkms" \
